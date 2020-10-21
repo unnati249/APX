@@ -1,0 +1,22 @@
+<form class="form-signin" (ngSubmit)="onSubmit(f.value)" #f="ngForm" >
+  
+    <app-master-control [(ngModel)]="currentOrder.customerName"  [placeholder]="'Customer Name'"
+    [isRequired]="true"
+    [errorMsg]="'Please enter Customer Name'"
+    [label] = "'Customer Name'"
+      ngModel name="customerName"></app-master-control>
+
+    <app-master-control [(ngModel)]="currentOrder.locationName" [placeholder]="'Location Name'"
+    [isRequired]="true"
+    [errorMsg]="'Please enter Location Name'"
+    [label] = "'Location Name'"
+      ngModel name="locationName"></app-master-control>
+
+    <app-master-control [(ngModel)]="currentOrder.deliveryStatus" [placeholder]="'Delivery Status'"
+    [isRequired]="true"
+    [errorMsg]="'Please enter Delivery Status'"
+    [label] = "'Delivery Status'"
+      ngModel name="deliveryStatus"></app-master-control>
+   
+    <button class="btn btn-primary btn-block" [disabled]="!f.valid" type="submit">Update Order</button>
+  </form>
